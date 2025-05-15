@@ -1,8 +1,8 @@
 public class Quadrado implements FiguraGeometrica{
-    double ladoA;
-    double ladoB;
-    double AlturaA;
-    double AlturaB;
+    private double ladoA;
+    private double ladoB;
+    private double AlturaA;
+    private double AlturaB;
 
     public double getLadoA() {
         return ladoA;

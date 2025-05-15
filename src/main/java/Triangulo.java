@@ -1,8 +1,8 @@
 public class Triangulo implements FiguraGeometrica{
 
-    double ladoA;
-    double ladoB;
-    double ladoC;
+    private double ladoA;
+    private double ladoB;
+    private double ladoC;
 
     public double getLadoA() {
         return ladoA;

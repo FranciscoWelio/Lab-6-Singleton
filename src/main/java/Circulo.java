@@ -1,6 +1,6 @@
 public class Circulo implements FiguraGeometrica{
 
-    int raio;
+    private int raio;
     public int getRaio() {
         return raio;
     }
