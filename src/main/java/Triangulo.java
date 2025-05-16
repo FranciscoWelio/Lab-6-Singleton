@@ -32,20 +32,28 @@ public class Triangulo implements FiguraGeometrica{
         System.out.println(getTipo() + " Com Lado a "+ getLadoA() +" Lado b " +getLadoB()+ " Lado c "+getLadoC());
     }
     public String tipo(){
+        if(!formaTrianguloValido()){
+            return "Não existente";
+        }
         if(getLadoA() == getLadoB() && getLadoA() == getLadoC()){
             return "Equilátero";
-        }else if(getLadoA() == getLadoB() && getLadoA() != getLadoC() && getLadoB() != getLadoC()){
+        }else if(getLadoA() == getLadoB() || getLadoA() == getLadoC() || getLadoB() == getLadoC()){
             return "Isósceles";
-        }else if(getLadoA() != getLadoB() && getLadoA() != getLadoC() && getLadoB() != getLadoC()){
+        }else{
             return "Escaleno";
-        }else {
-            return "Não existente";
         }
 
     }
     @Override
     public String getTipo() {
-        String s = "Triângulo" + tipo();
+        String s = "Triângulo " + tipo();
         return s;
+    }
+    private boolean formaTrianguloValido() {
+        double a = getLadoA();
+        double b = getLadoB();
+        double c = getLadoC();
+
+        return (a + b > c) && (a + c > b) && (b + c > a);
     }
 }

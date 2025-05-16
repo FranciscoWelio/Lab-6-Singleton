@@ -38,7 +38,7 @@ public class Quadrado implements FiguraGeometrica{
 
     @Override
     public void CriarFigura() {
-        System.out.println(getTipo()+ "Com lado a "+ getLadoA()+" Lado b "+ getLadoB() + " e Altura A "+getAlturaA() + " Altura b "+ getAlturaB());
+        System.out.println(getTipo()+ " Com lado a "+ getLadoA()+" Lado b "+ getLadoB() + " e Altura A "+getAlturaA() + " Altura b "+ getAlturaB());
     }
 
     @Override
@@ -53,9 +53,9 @@ public class Quadrado implements FiguraGeometrica{
             return "Quadrado";
         }else if(getLadoA() == getLadoB() && getAlturaA() == getAlturaB()){
             return "Retângulo";
-        }else if(getLadoA() < getLadoB() && getAlturaA() == getAlturaB()){
+        }else if(getLadoA() > getLadoB() && getAlturaA() == getAlturaB()){
             return "Trapézio Isósceles";
-        }else if(getLadoA() < getLadoB() && getAlturaA() < getAlturaB()) {
+        }else if(getLadoA() < getLadoB() && getAlturaA() > getAlturaB()) {
             return "Trapézio Escaleno";
         }else {
             return "Quadrilátero Irregular";
