@@ -5,7 +5,7 @@ public class Main {
         System.out.println("\n Cículos\n");
         fabrica.fabricarCirculo(10);
         System.out.println("\n Triângulos\n");
-        fabrica.fabricarTriangulo(10,10,10);
+        fabrica.fabricarTriangulo(-10,10,10);
         fabrica.fabricarTriangulo(10,10,5);
         fabrica.fabricarTriangulo(3, 4, 5);
         fabrica.fabricarTriangulo(5, 5, 15);

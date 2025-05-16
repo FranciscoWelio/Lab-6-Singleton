@@ -8,7 +8,10 @@ public class Quadrado implements FiguraGeometrica{
         return ladoA;
     }
 
-    public void setLadoA(double ladoA) {
+    public void setLadoA(double ladoA) throws IllegalArgumentException{
+        if(ladoA <= 0){
+            throw new IllegalArgumentException("O lado deve ser maior que 0");
+        }
         this.ladoA = ladoA;
     }
 
@@ -16,7 +19,10 @@ public class Quadrado implements FiguraGeometrica{
         return ladoB;
     }
 
-    public void setLadoB(double ladoB) {
+    public void setLadoB(double ladoB) throws IllegalArgumentException{
+        if(ladoB <= 0){
+            throw new IllegalArgumentException("O lado deve ser maior que 0");
+        }
         this.ladoB = ladoB;
     }
 
@@ -24,7 +30,10 @@ public class Quadrado implements FiguraGeometrica{
         return AlturaA;
     }
 
-    public void setAlturaA(double alturaA) {
+    public void setAlturaA(double alturaA) throws IllegalArgumentException{
+        if(alturaA <= 0){
+            throw new IllegalArgumentException("A altura deve ser maior que 0");
+        }
         AlturaA = alturaA;
     }
 
@@ -32,12 +41,18 @@ public class Quadrado implements FiguraGeometrica{
         return AlturaB;
     }
 
-    public void setAlturaB(double alturaB) {
+    public void setAlturaB(double alturaB) throws IllegalArgumentException{
+        if(alturaB <= 0){
+            throw new IllegalArgumentException("A altura deve ser maior que 0");
+        }
         AlturaB = alturaB;
     }
 
     @Override
     public void CriarFigura() {
+        if (getAlturaB() <= 0 || getAlturaA()<= 0|| getLadoB() <=0||getLadoA()<=0){
+            throw new IllegalStateException("Valores inválidos para criação de um quadrado");
+        }
         System.out.println(getTipo()+ " Com lado a "+ getLadoA()+" Lado b "+ getLadoB() + " e Altura A "+getAlturaA() + " Altura b "+ getAlturaB());
     }
 

@@ -8,7 +8,10 @@ public class Triangulo implements FiguraGeometrica{
         return ladoA;
     }
 
-    public void setLadoA(double ladoA) {
+    public void setLadoA(double ladoA) throws IllegalArgumentException{
+        if(ladoA <= 0){
+            throw new IllegalArgumentException("O lado deve ser maior que 0");
+        }
         this.ladoA = ladoA;
     }
 
@@ -16,7 +19,10 @@ public class Triangulo implements FiguraGeometrica{
         return ladoB;
     }
 
-    public void setLadoB(double ladoB) {
+    public void setLadoB(double ladoB) throws IllegalArgumentException {
+        if(ladoB <= 0){
+            throw new IllegalArgumentException("O lado deve ser maior que 0");
+        }
         this.ladoB = ladoB;
     }
 
@@ -24,11 +30,17 @@ public class Triangulo implements FiguraGeometrica{
         return ladoC;
     }
 
-    public void setLadoC(double ladoC) {
+    public void setLadoC(double ladoC) throws IllegalArgumentException {
+        if(ladoC <= 0){
+            throw new IllegalArgumentException("O lado deve ser maior que 0");
+        }
         this.ladoC = ladoC;
     }
     @Override
     public void CriarFigura() {
+        if (getLadoC()<=0|| getLadoB()<=0 || getLadoA()<=0){
+            throw new IllegalStateException("Criação inválida de triângulo");
+        }
         System.out.println(getTipo() + " Com Lado a "+ getLadoA() +" Lado b " +getLadoB()+ " Lado c "+getLadoC());
     }
     public String tipo(){
