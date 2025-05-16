@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FabricaTest {
     @Test
@@ -8,6 +9,13 @@ class FabricaTest {
         Circulo circulo = new Circulo();
         circulo.setRaio(10);
         assertEquals("Círculo criado: Raio = 10", circulo.getTipo() + " criado: Raio = "+ circulo.getRaio());
+    }
+    @Test
+    void testCirculoException() {
+        Circulo circulo = new Circulo();
+        assertThrows(IllegalArgumentException.class, () -> {
+            circulo.setRaio(-10);
+        });
     }
     @Test
     void testTriangulo1(){
@@ -40,6 +48,19 @@ class FabricaTest {
         triangulo.setLadoB(5);
         triangulo.setLadoC(15);
         assertEquals("Triângulo Não existente", triangulo.getTipo());
+    }
+    @Test
+    void testTrianguloException() {
+        Triangulo triangulo = new Triangulo();
+        assertThrows(IllegalArgumentException.class, () -> {
+            triangulo.setLadoA(-5);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            triangulo.setLadoB(-3);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            triangulo.setLadoC(-4);
+        });
     }
     @Test
     void testQuadrado(){
@@ -85,6 +106,22 @@ class FabricaTest {
         quadrado.setAlturaA(3);
         quadrado.setAlturaB(5);
         assertEquals("Quadrilátero Irregular", quadrado.getTipo());
+    }
+    @Test
+    void testQuadradoException() {
+        Quadrado quadrado = new Quadrado();
+        assertThrows(IllegalArgumentException.class, () -> {
+            quadrado.setLadoA(-5);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            quadrado.setLadoB(-2);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            quadrado.setAlturaA(-3);
+        });
+        assertThrows(IllegalArgumentException.class, () -> {
+            quadrado.setAlturaB(-1);
+        });
     }
 
 }
