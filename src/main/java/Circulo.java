@@ -11,7 +11,7 @@ public class Circulo implements FiguraGeometrica{
 
     @Override
     public void CriarFigura() {
-        System.out.println("Cículo criado: Raio = "+ getRaio());
+        System.out.println("Círculo criado: Raio = "+ getRaio());
     }
 
     @Override
